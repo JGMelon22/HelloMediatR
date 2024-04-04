@@ -1,6 +1,8 @@
 using ApiMediatRDemo.DTOs;
 using ApiMediatRDemo.Infrastructure.Data;
+using ApiMediatRDemo.Infrastructure.Repositories;
 using ApiMediatRDemo.Infrastructure.Validators;
+using ApiMediatRDemo.Interfaces;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,7 +25,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddScoped<IValidator<PersonInput>, PersonValidator>();
 
 // Repository Registration
-// TODO
+builder.Services.AddScoped<IPersonRepository, PersonRepository>();
 
 var app = builder.Build();
 
