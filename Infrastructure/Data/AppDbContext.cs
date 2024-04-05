@@ -1,5 +1,6 @@
 using ApiMediaRDemo.Infrastructure.Configuration;
 using ApiMediaRDemo.Models;
+using ApiMediatRDemo.Infrastructure.Configuration.Seending;
 using Microsoft.EntityFrameworkCore;
 
 namespace ApiMediaRDemo.Infrastructure.Data;
@@ -17,5 +18,7 @@ public class AppDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
         modelBuilder.ApplyConfiguration(new PersonConfiguration());
+
+        InitialSeeding.Seed(modelBuilder);
     }
 }
