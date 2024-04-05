@@ -27,4 +27,14 @@ public class PeopleController : ControllerBase
             ? Ok(people)
             : NoContent();
     }
+
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetPersonByIdAsync(Guid id)
+    {
+        var person = await _mediator.Send(new GetPersonByIdQuery(id));
+        return person.Data != null
+            ? Ok(person)
+            : NotFound();
+    }
 }

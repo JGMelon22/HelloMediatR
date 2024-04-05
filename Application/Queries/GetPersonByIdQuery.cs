@@ -4,4 +4,4 @@ using MediatR;
 
 namespace ApiMediaRDemo.Application.Queries;
 
-public record GetPersonByIdQuery() : IRequest<ServiceResponse<PersonResult>>;
+public record GetPersonByIdQuery(Guid id) : IRequest<ServiceResponse<PersonResult>>;
