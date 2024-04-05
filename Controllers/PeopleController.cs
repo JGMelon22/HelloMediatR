@@ -1,5 +1,6 @@
 using ApiMediaRDemo.Application.Queries;
 using ApiMediaRDemo.DTOs;
+using ApiMediatRDemo.Application.Commands;
 using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -28,7 +29,6 @@ public class PeopleController : ControllerBase
             : NoContent();
     }
 
-
     [HttpGet("{id}")]
     public async Task<IActionResult> GetPersonByIdAsync(Guid id)
     {
@@ -36,5 +36,14 @@ public class PeopleController : ControllerBase
         return person.Data != null
             ? Ok(person)
             : NotFound();
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> AddPersonAsync(PersonInput newPerson)
+    {
+        var person = await _mediator.Send(new AddPersonCommand(newPerson));
+        return person.Data != null
+            ? Ok(person)
+            : BadRequest(person.Data);
     }
 }
