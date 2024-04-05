@@ -1,11 +1,11 @@
-using ApiMediatRDemo.DTOs;
-using ApiMediatRDemo.Infrastructure.Data;
-using ApiMediatRDemo.Infrastructure.Mappling;
-using ApiMediatRDemo.Interfaces;
-using ApiMediatRDemo.Models;
+using ApiMediaRDemo.DTOs;
+using ApiMediaRDemo.Infrastructure.Data;
+using ApiMediaRDemo.Infrastructure.Mappling;
+using ApiMediaRDemo.Interfaces;
+using ApiMediaRDemo.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace ApiMediatRDemo.Infrastructure.Repositories;
+namespace ApiMediaRDemo.Infrastructure.Repositories;
 
 public class PersonRepository : IPersonRepository
 {

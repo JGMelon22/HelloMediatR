@@ -1,7 +1,7 @@
-using ApiMediatRDemo.DTOs;
-using ApiMediatRDemo.Models;
+using ApiMediaRDemo.DTOs;
+using ApiMediaRDemo.Models;
 
-namespace ApiMediatRDemo.Interfaces;
+namespace ApiMediaRDemo.Interfaces;
 
 public interface IPersonRepository
 {

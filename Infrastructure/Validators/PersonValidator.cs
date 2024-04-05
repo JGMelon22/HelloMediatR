@@ -1,7 +1,7 @@
-using ApiMediatRDemo.DTOs;
+using ApiMediaRDemo.DTOs;
 using FluentValidation;
 
-namespace ApiMediatRDemo.Infrastructure.Validators;
+namespace ApiMediaRDemo.Infrastructure.Validators;
 
 public class PersonValidator : AbstractValidator<PersonInput>
 {

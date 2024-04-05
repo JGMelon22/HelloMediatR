@@ -1,5 +1,5 @@
 using System.Data.SqlTypes;
 
-namespace ApiMediatRDemo.DTOs;
+namespace ApiMediaRDemo.DTOs;
 
 public record PersonInput(string FullName, byte Age);

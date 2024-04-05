@@ -1,4 +1,4 @@
-namespace ApiMediatRDemo.Models;
+namespace ApiMediaRDemo.Models;
 
 public class ServiceResponse<T>
 {

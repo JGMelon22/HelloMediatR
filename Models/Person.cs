@@ -1,6 +1,6 @@
 using System.Data.SqlTypes;
 
-namespace ApiMediatRDemo.Models;
+namespace ApiMediaRDemo.Models;
 
 public class Person
 {

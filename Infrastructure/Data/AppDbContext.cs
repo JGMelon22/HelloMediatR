@@ -1,8 +1,8 @@
-using ApiMediatRDemo.Infrastructure.Configuration;
-using ApiMediatRDemo.Models;
+using ApiMediaRDemo.Infrastructure.Configuration;
+using ApiMediaRDemo.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace ApiMediatRDemo.Infrastructure.Data;
+namespace ApiMediaRDemo.Infrastructure.Data;
 
 public class AppDbContext : DbContext
 {

@@ -1,8 +1,8 @@
-using ApiMediatRDemo.Models;
+using ApiMediaRDemo.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace ApiMediatRDemo.Infrastructure.Configuration;
+namespace ApiMediaRDemo.Infrastructure.Configuration;
 
 public class PersonConfiguration : IEntityTypeConfiguration<Person>
 {

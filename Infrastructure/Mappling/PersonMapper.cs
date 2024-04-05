@@ -1,8 +1,8 @@
-using ApiMediatRDemo.DTOs;
-using ApiMediatRDemo.Models;
+using ApiMediaRDemo.DTOs;
+using ApiMediaRDemo.Models;
 using Riok.Mapperly.Abstractions;
 
-namespace ApiMediatRDemo.Infrastructure.Mappling;
+namespace ApiMediaRDemo.Infrastructure.Mappling;
 
 [Mapper]
 public static partial class PersonMapper

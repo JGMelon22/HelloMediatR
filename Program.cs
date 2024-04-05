@@ -1,8 +1,8 @@
-using ApiMediatRDemo.DTOs;
-using ApiMediatRDemo.Infrastructure.Data;
-using ApiMediatRDemo.Infrastructure.Repositories;
-using ApiMediatRDemo.Infrastructure.Validators;
-using ApiMediatRDemo.Interfaces;
+using ApiMediaRDemo.DTOs;
+using ApiMediaRDemo.Infrastructure.Data;
+using ApiMediaRDemo.Infrastructure.Repositories;
+using ApiMediaRDemo.Infrastructure.Validators;
+using ApiMediaRDemo.Interfaces;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 
