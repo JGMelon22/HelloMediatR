@@ -1,3 +1,4 @@
+using System.Reflection;
 using ApiMediaRDemo.DTOs;
 using ApiMediaRDemo.Infrastructure.Data;
 using ApiMediaRDemo.Infrastructure.Repositories;
@@ -26,6 +27,9 @@ builder.Services.AddScoped<IValidator<PersonInput>, PersonValidator>();
 
 // Repository Registration
 builder.Services.AddScoped<IPersonRepository, PersonRepository>();
+
+// MediatR setup
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
 
 var app = builder.Build();
 
