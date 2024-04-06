@@ -44,6 +44,15 @@ public class PeopleController : ControllerBase
         var person = await _mediator.Send(new AddPersonCommand(newPerson));
         return person.Data != null
             ? Ok(person)
-            : BadRequest(person.Data);
+            : BadRequest(person);
+    }
+
+    [HttpPatch("{id}")]
+    public async Task<IActionResult> UpdatePersonAsync(Guid id, PersonInput updatedPerson)
+    {
+        var person = await _mediator.Send(new UpdatePersonCommand(id, updatedPerson));
+        return person.Data != null
+            ? Ok(person)
+            : BadRequest(person);
     }
 }

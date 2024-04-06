@@ -1,5 +1,4 @@
 using ApiMediaRDemo.DTOs;
-using ApiMediaRDemo.Infrastructure.Mappling;
 using ApiMediaRDemo.Interfaces;
 using ApiMediaRDemo.Models;
 using ApiMediatRDemo.Application.Commands;
