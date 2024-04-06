@@ -1,7 +1,6 @@
 using ApiMediaRDemo.Application.Queries;
-using ApiMediaRDemo.DTOs;
+
 using ApiMediaRDemo.Interfaces;
-using ApiMediaRDemo.Models;
 using MediatR;
 
 namespace ApiMediaRDemo.Application.Handlers;

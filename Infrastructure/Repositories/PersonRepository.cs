@@ -1,8 +1,7 @@
-using ApiMediaRDemo.DTOs;
 using ApiMediaRDemo.Infrastructure.Data;
 using ApiMediaRDemo.Infrastructure.Mappling;
 using ApiMediaRDemo.Interfaces;
-using ApiMediaRDemo.Models;
+
 using Microsoft.EntityFrameworkCore;
 
 namespace ApiMediaRDemo.Infrastructure.Repositories;

@@ -1,5 +1,4 @@
 using ApiMediaRDemo.Interfaces;
-using ApiMediaRDemo.Models;
 using ApiMediatRDemo.Application.Commands;
 using MediatR;
 

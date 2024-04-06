@@ -1,4 +1,3 @@
-using ApiMediaRDemo.Models;
 using MediatR;
 
 namespace ApiMediatRDemo.Application.Commands;

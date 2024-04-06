@@ -1,6 +1,3 @@
-using ApiMediaRDemo.DTOs;
-using ApiMediaRDemo.Models;
-
 namespace ApiMediaRDemo.Interfaces;
 
 public interface IPersonRepository

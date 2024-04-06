@@ -1,9 +1,7 @@
 using ApiMediaRDemo.Application.Queries;
-using ApiMediaRDemo.DTOs;
+
 using ApiMediaRDemo.Interfaces;
-using ApiMediaRDemo.Models;
 using MediatR;
-using Microsoft.AspNetCore.Authentication;
 
 namespace ApiMediatRDemo.Application.Handlers;
 

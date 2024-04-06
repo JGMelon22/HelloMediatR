@@ -1,5 +1,3 @@
-using ApiMediaRDemo.DTOs;
-using ApiMediaRDemo.Models;
 using Riok.Mapperly.Abstractions;
 
 namespace ApiMediaRDemo.Infrastructure.Mappling;

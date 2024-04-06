@@ -1,5 +1,4 @@
 using ApiMediaRDemo.Infrastructure.Configuration;
-using ApiMediaRDemo.Models;
 using ApiMediatRDemo.Infrastructure.Configuration.Seending;
 using Microsoft.EntityFrameworkCore;
 

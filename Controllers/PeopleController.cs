@@ -1,5 +1,5 @@
 using ApiMediaRDemo.Application.Queries;
-using ApiMediaRDemo.DTOs;
+
 using ApiMediatRDemo.Application.Commands;
 using FluentValidation;
 using MediatR;

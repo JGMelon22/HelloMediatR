@@ -1,4 +1,3 @@
-using ApiMediaRDemo.DTOs;
 using FluentValidation;
 
 namespace ApiMediaRDemo.Infrastructure.Validators;

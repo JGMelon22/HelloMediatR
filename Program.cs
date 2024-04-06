@@ -1,5 +1,5 @@
 using System.Reflection;
-using ApiMediaRDemo.DTOs;
+
 using ApiMediaRDemo.Infrastructure.Data;
 using ApiMediaRDemo.Infrastructure.Repositories;
 using ApiMediaRDemo.Infrastructure.Validators;

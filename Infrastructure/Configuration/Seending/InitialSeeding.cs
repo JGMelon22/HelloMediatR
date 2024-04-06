@@ -1,6 +1,4 @@
-using ApiMediaRDemo.Models;
 using Bogus;
-using Bogus.DataSets;
 using Microsoft.EntityFrameworkCore;
 
 namespace ApiMediatRDemo.Infrastructure.Configuration.Seending;

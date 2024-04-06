@@ -1,5 +1,3 @@
-using ApiMediaRDemo.DTOs;
-using ApiMediaRDemo.Models;
 using MediatR;
 
 namespace ApiMediaRDemo.Application.Queries;
