@@ -55,4 +55,13 @@ public class PeopleController : ControllerBase
             ? Ok(person)
             : BadRequest(person);
     }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> RemovePersonAsync(Guid id)
+    {
+        var person = await _mediator.Send(new RemovePersonCommand(id));
+        return person.Success != false
+            ? NoContent()
+            : BadRequest(person);
+    }
 }

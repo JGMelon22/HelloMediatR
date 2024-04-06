@@ -94,6 +94,9 @@ public class PersonRepository : IPersonRepository
             var person = await _dbContext.People
                 .FindAsync(id)
                 ?? throw new Exception($"Person with id {id} not found!");
+
+            _dbContext.People.Remove(person);
+            await _dbContext.SaveChangesAsync();
         }
         catch (Exception ex)
         {
