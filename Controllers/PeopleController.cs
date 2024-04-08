@@ -2,6 +2,7 @@ using ApiMediaRDemo.Application.Queries;
 
 using ApiMediatRDemo.Application.Commands;
 using FluentValidation;
+using FluentValidation.Results;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -41,6 +42,10 @@ public class PeopleController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> AddPersonAsync(PersonInput newPerson)
     {
+        ValidationResult validatorResult = await _personValidator.ValidateAsync(newPerson);
+        if (!validatorResult.IsValid)
+            return BadRequest(string.Join(',', validatorResult.Errors));
+
         var person = await _mediator.Send(new AddPersonCommand(newPerson));
         return person.Data != null
             ? Ok(person)
@@ -50,6 +55,10 @@ public class PeopleController : ControllerBase
     [HttpPatch("{id}")]
     public async Task<IActionResult> UpdatePersonAsync(Guid id, PersonInput updatedPerson)
     {
+        ValidationResult validatorResult = await _personValidator.ValidateAsync(updatedPerson);
+        if (!validatorResult.IsValid)
+            return BadRequest(string.Join(',', validatorResult.Errors));
+
         var person = await _mediator.Send(new UpdatePersonCommand(id, updatedPerson));
         return person.Data != null
             ? Ok(person)
