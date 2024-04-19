@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiMediatRDemo", "ApiMediatRDemo.csproj", "{20A85032-4706-488F-BD71-D7A590126837}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiMediatRDemo", "ApiMediatRDemo\ApiMediatRDemo.csproj", "{E0C9CB99-1E2D-4732-B61F-6BC1C48A2E91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,9 +14,9 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{20A85032-4706-488F-BD71-D7A590126837}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{20A85032-4706-488F-BD71-D7A590126837}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{20A85032-4706-488F-BD71-D7A590126837}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{20A85032-4706-488F-BD71-D7A590126837}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0C9CB99-1E2D-4732-B61F-6BC1C48A2E91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0C9CB99-1E2D-4732-B61F-6BC1C48A2E91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0C9CB99-1E2D-4732-B61F-6BC1C48A2E91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0C9CB99-1E2D-4732-B61F-6BC1C48A2E91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
