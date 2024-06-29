@@ -18,6 +18,6 @@ public class AppDbContext : DbContext
         base.OnModelCreating(modelBuilder);
         modelBuilder.ApplyConfiguration(new PersonConfiguration());
 
-        InitialSeeding.Seed(modelBuilder);
+        // InitialSeeding.Seed(modelBuilder);
     }
 }
