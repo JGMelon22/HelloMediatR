@@ -14,6 +14,6 @@ public class RemovePersonHandler : IRequestHandler<RemovePersonCommand, ServiceR
 
     public async Task<ServiceResponse<bool>> Handle(RemovePersonCommand request, CancellationToken cancellationToken)
     {
-        return await _personRepository.RemovePersonAsync(request.id);
+        return await _personRepository.RemovePersonAsync(request.Id);
     }
 }

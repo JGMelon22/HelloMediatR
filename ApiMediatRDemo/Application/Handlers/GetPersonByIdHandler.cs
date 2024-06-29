@@ -15,6 +15,6 @@ public class GetPersonByIdHandler : IRequestHandler<GetPersonByIdQuery, ServiceR
 
     public async Task<ServiceResponse<PersonResult>> Handle(GetPersonByIdQuery request, CancellationToken cancellationToken)
     {
-        return await _personRepository.GetPersonByIdAsync(request.id);
+        return await _personRepository.GetPersonByIdAsync(request.Id);
     }
 }

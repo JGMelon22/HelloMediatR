@@ -15,6 +15,6 @@ public class AddPersonHandler : IRequestHandler<AddPersonCommand, ServiceRespons
 
     public async Task<ServiceResponse<PersonResult>> Handle(AddPersonCommand request, CancellationToken cancellationToken)
     {
-        return await _personRepository.AddNewPersonAsync(request.newPerson);
+        return await _personRepository.AddNewPersonAsync(request.NewPerson);
     }
 }

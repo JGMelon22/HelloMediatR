@@ -14,6 +14,6 @@ public class UpdatePersonHandler : IRequestHandler<UpdatePersonCommand, ServiceR
 
     public async Task<ServiceResponse<PersonResult>> Handle(UpdatePersonCommand request, CancellationToken cancellationToken)
     {
-        return await _personRepository.UpdatePersonAsync(request.id, request.updatedPerson);
+        return await _personRepository.UpdatePersonAsync(request.Id, request.UpdatedPerson);
     }
 }
