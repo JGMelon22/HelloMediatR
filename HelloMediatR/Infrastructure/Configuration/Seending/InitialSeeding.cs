@@ -1,7 +1,7 @@
 using Bogus;
 using Microsoft.EntityFrameworkCore;
 
-namespace ApiMediatRDemo.Infrastructure.Configuration.Seending;
+namespace HelloMediatR.Infrastructure.Configuration.Seending;
 
 public static class InitialSeeding
 {

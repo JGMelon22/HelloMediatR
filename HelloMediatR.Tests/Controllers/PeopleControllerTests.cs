@@ -1,8 +1,8 @@
 using ApiMediaRDemo.Application.Queries;
 using ApiMediaRDemo.DTOs;
 using ApiMediaRDemo.Models;
-using ApiMediatRDemo.Application.Commands;
-using ApiMediatRDemo.Controllers;
+using HelloMediatR.Application.Commands;
+using HelloMediatR.Controllers;
 using FakeItEasy;
 using FluentAssertions;
 using FluentValidation;

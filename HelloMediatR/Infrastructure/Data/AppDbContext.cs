@@ -1,5 +1,5 @@
 using ApiMediaRDemo.Infrastructure.Configuration;
-using ApiMediatRDemo.Infrastructure.Configuration.Seending;
+using HelloMediatR.Infrastructure.Configuration.Seending;
 using Microsoft.EntityFrameworkCore;
 
 namespace ApiMediaRDemo.Infrastructure.Data;

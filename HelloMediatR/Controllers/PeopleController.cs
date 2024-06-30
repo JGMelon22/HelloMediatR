@@ -1,12 +1,12 @@
 using ApiMediaRDemo.Application.Queries;
 
-using ApiMediatRDemo.Application.Commands;
+using HelloMediatR.Application.Commands;
 using FluentValidation;
 using FluentValidation.Results;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ApiMediatRDemo.Controllers;
+namespace HelloMediatR.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]

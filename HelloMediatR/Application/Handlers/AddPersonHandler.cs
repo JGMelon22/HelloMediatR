@@ -1,8 +1,8 @@
 using ApiMediaRDemo.Interfaces;
-using ApiMediatRDemo.Application.Commands;
+using HelloMediatR.Application.Commands;
 using MediatR;
 
-namespace ApiMediatRDemo.Application.Handlers;
+namespace HelloMediatR.Application.Handlers;
 
 public class AddPersonHandler : IRequestHandler<AddPersonCommand, ServiceResponse<PersonResult>>
 {

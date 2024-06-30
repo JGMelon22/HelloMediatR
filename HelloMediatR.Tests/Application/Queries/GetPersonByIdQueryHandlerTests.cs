@@ -2,7 +2,7 @@ using ApiMediaRDemo.Application.Queries;
 using ApiMediaRDemo.DTOs;
 using ApiMediaRDemo.Interfaces;
 using ApiMediaRDemo.Models;
-using ApiMediatRDemo.Application.Handlers;
+using HelloMediatR.Application.Handlers;
 using FakeItEasy;
 using FluentAssertions;
 

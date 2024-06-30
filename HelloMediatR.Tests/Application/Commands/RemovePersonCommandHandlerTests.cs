@@ -1,7 +1,7 @@
 using ApiMediaRDemo.Interfaces;
 using ApiMediaRDemo.Models;
-using ApiMediatRDemo.Application.Commands;
-using ApiMediatRDemo.Application.Handlers;
+using HelloMediatR.Application.Commands;
+using HelloMediatR.Application.Handlers;
 using FakeItEasy;
 using FluentAssertions;
 

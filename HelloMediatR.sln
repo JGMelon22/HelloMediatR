@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiMediatRDemo", "ApiMediatRDemo\ApiMediatRDemo.csproj", "{E0C9CB99-1E2D-4732-B61F-6BC1C48A2E91}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloMediatR", "HelloMediatR\HelloMediatR.csproj", "{E0C9CB99-1E2D-4732-B61F-6BC1C48A2E91}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloMediatR.Tests", "HelloMediatR.Tests\HelloMediatR.Tests.csproj", "{E8847CD0-0E53-487A-8FF8-6F0D5F54E426}"
 EndProject

@@ -3,7 +3,7 @@ using ApiMediaRDemo.Application.Queries;
 using ApiMediaRDemo.Interfaces;
 using MediatR;
 
-namespace ApiMediatRDemo.Application.Handlers;
+namespace HelloMediatR.Application.Handlers;
 
 public class GetPersonByIdHandler : IRequestHandler<GetPersonByIdQuery, ServiceResponse<PersonResult>>
 {

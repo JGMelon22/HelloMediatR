@@ -1,5 +1,5 @@
 using MediatR;
 
-namespace ApiMediatRDemo.Application.Commands;
+namespace HelloMediatR.Application.Commands;
 
 public record AddPersonCommand(PersonInput NewPerson) : IRequest<ServiceResponse<PersonResult>>;

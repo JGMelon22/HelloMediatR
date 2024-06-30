@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ApiMediatRDemo\ApiMediatRDemo.csproj" />
+    <ProjectReference Include="..\HelloMediatR\HelloMediatR.csproj" />
   </ItemGroup>
 
 </Project>
