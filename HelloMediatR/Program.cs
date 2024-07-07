@@ -5,6 +5,7 @@ using ApiMediaRDemo.Infrastructure.Repositories;
 using ApiMediaRDemo.Infrastructure.Validators;
 using ApiMediaRDemo.Interfaces;
 using FluentValidation;
+using HelloMediatR.Configuration;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -30,6 +31,9 @@ builder.Services.AddScoped<IPersonRepository, PersonRepository>();
 
 // MediatR setup
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+
+// Basic Otel service
+builder.Services.AddCustomOtel();
 
 var app = builder.Build();
 

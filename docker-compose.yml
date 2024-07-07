@@ -1,0 +1,24 @@
+services:
+  hellomediatr:
+    image: ${DOCKER_REGISTRY-}hellomediatr
+    container_name: hellomediatr-api
+    build:
+      context: .
+      dockerfile: HelloMediatR/Dockerfile
+    ports:
+      - 8081:8081
+    environment:
+      - OTEL_EXPORT_OTLP_ENDPOINT=http://hellomediatr.dashboard:18889
+    networks:
+      - otel
+
+  hellomediatr.dashboard:
+    image: mcr.microsoft.com/dotnet/aspire-dashboard:8.0
+    container_name: aspire-dashboard
+    ports:
+      - 18888:18888
+    networks:
+      - otel
+
+networks:
+  otel:
