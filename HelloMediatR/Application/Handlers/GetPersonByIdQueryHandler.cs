@@ -5,10 +5,10 @@ using MediatR;
 
 namespace HelloMediatR.Application.Handlers;
 
-public class GetPersonByIdHandler : IRequestHandler<GetPersonByIdQuery, ServiceResponse<PersonResult>>
+public class GetPersonByIdQueryHandler : IRequestHandler<GetPersonByIdQuery, ServiceResponse<PersonResult>>
 {
     private readonly IPersonRepository _personRepository;
-    public GetPersonByIdHandler(IPersonRepository personRepository)
+    public GetPersonByIdQueryHandler(IPersonRepository personRepository)
     {
         _personRepository = personRepository;
     }

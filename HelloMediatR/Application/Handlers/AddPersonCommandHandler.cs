@@ -4,11 +4,11 @@ using MediatR;
 
 namespace HelloMediatR.Application.Handlers;
 
-public class AddPersonHandler : IRequestHandler<AddPersonCommand, ServiceResponse<PersonResult>>
+public class AddPersonCommandHandler : IRequestHandler<AddPersonCommand, ServiceResponse<PersonResult>>
 {
     private readonly IPersonRepository _personRepository;
 
-    public AddPersonHandler(IPersonRepository personRepository)
+    public AddPersonCommandHandler(IPersonRepository personRepository)
     {
         _personRepository = personRepository;
     }

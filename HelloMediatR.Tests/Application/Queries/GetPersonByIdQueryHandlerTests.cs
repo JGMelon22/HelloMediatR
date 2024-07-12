@@ -2,9 +2,9 @@ using ApiMediaRDemo.Application.Queries;
 using ApiMediaRDemo.DTOs;
 using ApiMediaRDemo.Interfaces;
 using ApiMediaRDemo.Models;
-using HelloMediatR.Application.Handlers;
 using FakeItEasy;
 using FluentAssertions;
+using HelloMediatR.Application.Handlers;
 
 namespace HelloMediatR.Tests.Application.Queries;
 
@@ -21,8 +21,8 @@ public class GetPersonByIdQueryHandlerTests
     public async Task GetPersonByIdQuery_Handle_ReturnsPersonResult()
     {
         // Arrange 
-        Guid id = Guid.NewGuid();
-        var handler = new GetPersonByIdHandler(_personRepository);
+        var id = Guid.NewGuid();
+        var handler = new GetPersonByIdQueryHandler(_personRepository);
         var personResult = new PersonResult
         {
             Id = id,

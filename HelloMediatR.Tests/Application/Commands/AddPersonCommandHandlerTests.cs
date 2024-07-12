@@ -1,10 +1,10 @@
 using ApiMediaRDemo.DTOs;
 using ApiMediaRDemo.Interfaces;
 using ApiMediaRDemo.Models;
-using HelloMediatR.Application.Commands;
-using HelloMediatR.Application.Handlers;
 using FakeItEasy;
 using FluentAssertions;
+using HelloMediatR.Application.Commands;
+using HelloMediatR.Application.Handlers;
 
 namespace HelloMediatR.Tests.Application.Commands;
 
@@ -22,7 +22,7 @@ public class AddPersonCommandHandlerTests
     {
         // Arrange 
         var newPerson = new PersonInput("Fulano de Tal", 22);
-        var handler = new AddPersonHandler(_personRepository);
+        var handler = new AddPersonCommandHandler(_personRepository);
         var personResult = new PersonResult
         {
             Id = Guid.NewGuid(),

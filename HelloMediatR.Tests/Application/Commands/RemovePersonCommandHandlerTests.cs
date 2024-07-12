@@ -1,9 +1,9 @@
 using ApiMediaRDemo.Interfaces;
 using ApiMediaRDemo.Models;
-using HelloMediatR.Application.Commands;
-using HelloMediatR.Application.Handlers;
 using FakeItEasy;
 using FluentAssertions;
+using HelloMediatR.Application.Commands;
+using HelloMediatR.Application.Handlers;
 
 namespace HelloMediatR.Tests.Application.Commands;
 
@@ -20,8 +20,8 @@ public class RemovePersonCommandHandlerTests
     public async Task RemovePersonCommandHandler_Handle_ReturnsSuccess()
     {
         // Arrange 
-        Guid id = Guid.NewGuid();
-        var handler = new RemovePersonHandler(_personRepository);
+        var id = Guid.NewGuid();
+        var handler = new RemovePersonCommandHandler(_personRepository);
         var serviceResponse = new ServiceResponse<bool> { Success = true };
 
         A.CallTo(() => _personRepository.RemovePersonAsync(id))

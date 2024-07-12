@@ -4,10 +4,10 @@ using MediatR;
 
 namespace HelloMediatR.Application.Handlers;
 
-public class UpdatePersonHandler : IRequestHandler<UpdatePersonCommand, ServiceResponse<PersonResult>>
+public class UpdatePersonCommandHandler : IRequestHandler<UpdatePersonCommand, ServiceResponse<PersonResult>>
 {
     private readonly IPersonRepository _personRepository;
-    public UpdatePersonHandler(IPersonRepository personRepository)
+    public UpdatePersonCommandHandler(IPersonRepository personRepository)
     {
         _personRepository = personRepository;
     }

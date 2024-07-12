@@ -21,8 +21,8 @@ public class GetPeeopleQueryHandlerTests
     public async Task GetPeopleQueryHandler_Handle_ReturnsPeopleResult()
     {
         // Arrange
-        var handler = new GetPeopleHandler(_personRepository);
-        List<PersonResult> personResult = new List<PersonResult>
+        var handler = new GetPeopleQueryHandler(_personRepository);
+        var personResult = new List<PersonResult>
         {
             new() { Id = Guid.NewGuid(), FullName = "Laura Martinez", Age = 21 },
             new() { Id = Guid.NewGuid(), FullName = "Maria Gonzalez", Age = 20 },
@@ -31,7 +31,7 @@ public class GetPeeopleQueryHandlerTests
         var serviceResponse = new ServiceResponse<List<PersonResult>> { Data = personResult };
 
         A.CallTo(() => _personRepository.GetAllPeopleAsync())
-           .Returns(Task.FromResult(serviceResponse));
+            .Returns(Task.FromResult(serviceResponse));
 
         var query = new GetPeopleQuery();
 

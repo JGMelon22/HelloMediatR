@@ -1,10 +1,10 @@
 using ApiMediaRDemo.DTOs;
 using ApiMediaRDemo.Interfaces;
 using ApiMediaRDemo.Models;
-using HelloMediatR.Application.Commands;
-using HelloMediatR.Application.Handlers;
 using FakeItEasy;
 using FluentAssertions;
+using HelloMediatR.Application.Commands;
+using HelloMediatR.Application.Handlers;
 
 namespace HelloMediatR.Tests.Application.Commands;
 
@@ -21,9 +21,9 @@ public class UpdatePersonCommandHandlerTests
     public async Task UpdatePersonCommandHandler_Handle_ReturnsPersonResult()
     {
         // Arrange
-        Guid id = Guid.NewGuid();
+        var id = Guid.NewGuid();
         var updatedPerson = new PersonInput("Fulano de Tal", 22);
-        var handler = new UpdatePersonHandler(_personRepository);
+        var handler = new UpdatePersonCommandHandler(_personRepository);
         var personResult = new PersonResult
         {
             Id = id,

@@ -5,11 +5,11 @@ using MediatR;
 
 namespace ApiMediaRDemo.Application.Handlers;
 
-public class GetPeopleHandler : IRequestHandler<GetPeopleQuery, ServiceResponse<List<PersonResult>>>
+public class GetPeopleQueryHandler : IRequestHandler<GetPeopleQuery, ServiceResponse<List<PersonResult>>>
 {
     private readonly IPersonRepository _personRepository;
 
-    public GetPeopleHandler(IPersonRepository personRepository)
+    public GetPeopleQueryHandler(IPersonRepository personRepository)
     {
         _personRepository = personRepository;
     }
