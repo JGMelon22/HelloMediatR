@@ -47,8 +47,7 @@ public class PersonRepository : IPersonRepository
         {
             var people = await _dbContext.People
                 .AsNoTracking()
-                .ToListAsync()
-                ?? throw new Exception("People list is empty!");
+                .ToListAsync();
 
             var peopleResult = people.Select(PersonMapper.PersonToPersonResult).ToList();
 

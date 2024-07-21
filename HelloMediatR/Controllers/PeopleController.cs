@@ -25,7 +25,7 @@ public class PeopleController : ControllerBase
     public async Task<IActionResult> GetAllPeopleAsync()
     {
         var people = await _mediator.Send(new GetPeopleQuery());
-        return people.Data != null
+        return people.Data != null && people.Data.Any()
             ? Ok(people)
             : NoContent();
     }
