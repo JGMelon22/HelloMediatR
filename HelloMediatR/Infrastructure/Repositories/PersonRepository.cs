@@ -1,6 +1,7 @@
 using ApiMediaRDemo.Infrastructure.Data;
 using ApiMediaRDemo.Infrastructure.Mappling;
 using ApiMediaRDemo.Interfaces;
+using System.Reflection;
 
 using Microsoft.EntityFrameworkCore;
 
@@ -9,10 +10,12 @@ namespace ApiMediaRDemo.Infrastructure.Repositories;
 public class PersonRepository : IPersonRepository
 {
     private readonly AppDbContext _dbContext;
+    private readonly ILogger<PersonRepository> _logger;
 
-    public PersonRepository(AppDbContext dbContext)
+    public PersonRepository(AppDbContext dbContext, ILogger<PersonRepository> logger)
     {
         _dbContext = dbContext;
+        _logger = logger;
     }
 
     public async Task<ServiceResponse<PersonResult>> AddNewPersonAsync(PersonInput newPerson)
@@ -22,6 +25,9 @@ public class PersonRepository : IPersonRepository
         try
         {
             var person = PersonMapper.PersonToPersonInput(newPerson);
+            var methodNameLog = $"[{GetType().Name} -> {MethodBase.GetCurrentMethod()!.ReflectedType!.Name}]";
+
+            _logger.LogInformation("{methodName} {objectName}: {@newPerson}", methodNameLog, nameof(newPerson), newPerson);
 
             await _dbContext.People.AddAsync(person);
             await _dbContext.SaveChangesAsync();
@@ -32,6 +38,8 @@ public class PersonRepository : IPersonRepository
         }
         catch (Exception ex)
         {
+            _logger.LogError(ex, ex.Message, GetType().Name);
+
             serviceResponse.Success = false;
             serviceResponse.Message = ex.Message;
         }
@@ -55,6 +63,8 @@ public class PersonRepository : IPersonRepository
         }
         catch (Exception ex)
         {
+            _logger.LogError(ex, ex.Message, GetType().Name);
+
             serviceResponse.Success = false;
             serviceResponse.Message = ex.Message;
         }
@@ -68,14 +78,20 @@ public class PersonRepository : IPersonRepository
 
         try
         {
+            var methodNameLog = $"[{GetType().Name} -> {MethodBase.GetCurrentMethod()!.ReflectedType!.Name}]";
+
             var person = await _dbContext.People
                 .FindAsync(id)
                 ?? throw new Exception($"Person with id {id} not found!");
+
+            _logger.LogInformation("{methodName} {objectName}: {@person}", methodNameLog, nameof(person), person);
 
             serviceResponse.Data = PersonMapper.PersonToPersonResult(person);
         }
         catch (Exception ex)
         {
+            _logger.LogError(ex, ex.Message, GetType().Name);
+
             serviceResponse.Success = false;
             serviceResponse.Message = ex.Message;
         }
@@ -89,15 +105,21 @@ public class PersonRepository : IPersonRepository
 
         try
         {
+            var methodNameLog = $"[{GetType().Name} -> {MethodBase.GetCurrentMethod()!.ReflectedType!.Name}]";
+
             var person = await _dbContext.People
                 .FindAsync(id)
                 ?? throw new Exception($"Person with id {id} not found!");
+
+            _logger.LogInformation("{methodName} {objectName}: {@person}", methodNameLog, nameof(person), person);
 
             _dbContext.People.Remove(person);
             await _dbContext.SaveChangesAsync();
         }
         catch (Exception ex)
         {
+            _logger.LogError(ex, ex.Message, GetType().Name);
+
             serviceResponse.Success = false;
             serviceResponse.Message = ex.Message;
         }
@@ -111,6 +133,10 @@ public class PersonRepository : IPersonRepository
 
         try
         {
+            var methodNameLog = $"[{GetType().Name} -> {MethodBase.GetCurrentMethod()!.ReflectedType!.Name}]";
+
+            _logger.LogInformation("{methodName} {objectName}: {@updatedPerson}", methodNameLog, nameof(updatedPerson), updatedPerson);
+
             var person = await _dbContext.People
                 .FindAsync(id)
                 ?? throw new Exception($"Person with id {id} not found!");
@@ -125,6 +151,8 @@ public class PersonRepository : IPersonRepository
         }
         catch (Exception ex)
         {
+            _logger.LogError(ex, ex.Message, GetType().Name);
+
             serviceResponse.Success = false;
             serviceResponse.Message = ex.Message;
         }
