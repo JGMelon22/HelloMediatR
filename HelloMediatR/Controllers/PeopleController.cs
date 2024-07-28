@@ -5,7 +5,6 @@ using FluentValidation;
 using FluentValidation.Results;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Serilog;
 
 namespace HelloMediatR.Controllers;
 
@@ -15,25 +14,17 @@ public class PeopleController : ControllerBase
 {
     private readonly IMediator _mediator;
     private readonly IValidator<PersonInput> _personValidator;
-    private readonly ILogger<PeopleController> _logger;
 
-    public PeopleController(IMediator mediator, IValidator<PersonInput> personValidator
-        , ILogger<PeopleController> logger)
+    public PeopleController(IMediator mediator, IValidator<PersonInput> personValidator)
     {
         _mediator = mediator;
         _personValidator = personValidator;
-        _logger = logger;
     }
 
     [HttpGet]
     public async Task<IActionResult> GetAllPeopleAsync()
     {
-        _logger.LogInformation("Request Initialized");
-
         var people = await _mediator.Send(new GetPeopleQuery());
-
-        _logger.LogInformation("Request Completed | {@people}", people.Data?.Count());
-
         return people.Data != null && people.Data.Any()
             ? Ok(people)
             : NoContent();
