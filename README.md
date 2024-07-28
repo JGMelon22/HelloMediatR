@@ -11,6 +11,8 @@ Utterly simplified attempt to implement CQRS and MediatR pattern
    <li>Microsoft.EntityFrameworkCore.SqlServer</li>
    <li>Riok.Mapperly</li>
    <li>Swashbuckle.AspNetCore</li>
+   <li>Serilog.AspNetCore</li>
+   <li>Serilog.Sinks.Console</li>
 </ul>
 
 <div align="center">
