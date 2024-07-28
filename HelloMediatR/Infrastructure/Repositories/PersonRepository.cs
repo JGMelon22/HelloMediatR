@@ -53,9 +53,13 @@ public class PersonRepository : IPersonRepository
 
         try
         {
+            var methodNameLog = $"[{GetType().Name} -> {MethodBase.GetCurrentMethod()!.ReflectedType!.Name}]";
+
             var people = await _dbContext.People
                 .AsNoTracking()
                 .ToListAsync();
+
+            _logger.LogInformation("{methodName} {objectName}: {@people}", methodNameLog, nameof(people), people);
 
             var peopleResult = people.Select(PersonMapper.PersonToPersonResult).ToList();
 
