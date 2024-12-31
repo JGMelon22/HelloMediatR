@@ -34,7 +34,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 });
 
 // Validator
-builder.Services.AddScoped<IValidator<PersonInput>, PersonValidator>();
+builder.Services.AddScoped<IValidator<PersonRequest>, PersonValidator>();
 
 // Repository Registration
 builder.Services.AddScoped<IPersonRepository, PersonRepository>();

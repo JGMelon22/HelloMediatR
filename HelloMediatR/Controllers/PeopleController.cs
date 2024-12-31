@@ -13,9 +13,9 @@ namespace HelloMediatR.Controllers;
 public class PeopleController : ControllerBase
 {
     private readonly IMediator _mediator;
-    private readonly IValidator<PersonInput> _personValidator;
+    private readonly IValidator<PersonRequest> _personValidator;
 
-    public PeopleController(IMediator mediator, IValidator<PersonInput> personValidator)
+    public PeopleController(IMediator mediator, IValidator<PersonRequest> personValidator)
     {
         _mediator = mediator;
         _personValidator = personValidator;
@@ -40,7 +40,7 @@ public class PeopleController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> AddPersonAsync(PersonInput newPerson)
+    public async Task<IActionResult> AddPersonAsync(PersonRequest newPerson)
     {
         ValidationResult validatorResult = await _personValidator.ValidateAsync(newPerson);
         if (!validatorResult.IsValid)
@@ -53,7 +53,7 @@ public class PeopleController : ControllerBase
     }
 
     [HttpPatch("{id}")]
-    public async Task<IActionResult> UpdatePersonAsync(Guid id, PersonInput updatedPerson)
+    public async Task<IActionResult> UpdatePersonAsync(Guid id, PersonRequest updatedPerson)
     {
         ValidationResult validatorResult = await _personValidator.ValidateAsync(updatedPerson);
         if (!validatorResult.IsValid)

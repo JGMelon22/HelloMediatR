@@ -2,7 +2,7 @@ using FluentValidation;
 
 namespace ApiMediaRDemo.Infrastructure.Validators;
 
-public class PersonValidator : AbstractValidator<PersonInput>
+public class PersonValidator : AbstractValidator<PersonRequest>
 {
     public PersonValidator()
     {

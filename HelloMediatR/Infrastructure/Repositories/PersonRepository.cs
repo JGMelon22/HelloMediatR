@@ -18,13 +18,13 @@ public class PersonRepository : IPersonRepository
         _logger = logger;
     }
 
-    public async Task<ServiceResponse<PersonResult>> AddNewPersonAsync(PersonInput newPerson)
+    public async Task<ServiceResponse<PersonResult>> AddNewPersonAsync(PersonRequest newPerson)
     {
         var serviceResponse = new ServiceResponse<PersonResult>();
 
         try
         {
-            var person = PersonMapper.PersonToPersonInput(newPerson);
+            var person = PersonMapper.PersonRequestToPerson(newPerson);
             var methodNameLog = $"[{GetType().Name} -> {MethodBase.GetCurrentMethod()!.ReflectedType!.Name}]";
 
             _logger.LogInformation("{methodName} {objectName}: {@newPerson}", methodNameLog, nameof(newPerson), newPerson);
@@ -131,7 +131,7 @@ public class PersonRepository : IPersonRepository
         return serviceResponse;
     }
 
-    public async Task<ServiceResponse<PersonResult>> UpdatePersonAsync(Guid id, PersonInput updatedPerson)
+    public async Task<ServiceResponse<PersonResult>> UpdatePersonAsync(Guid id, PersonRequest updatedPerson)
     {
         var serviceResponse = new ServiceResponse<PersonResult>();
 

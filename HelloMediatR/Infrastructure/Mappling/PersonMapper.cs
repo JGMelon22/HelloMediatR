@@ -6,6 +6,6 @@ namespace ApiMediaRDemo.Infrastructure.Mappling;
 public static partial class PersonMapper
 {
     public static partial PersonResult PersonToPersonResult(Person person);
-    public static partial Person PersonToPersonInput(PersonInput person);
-    public static partial void ApplyUpdate(PersonInput updatedPerson, Person person);
+    public static partial Person PersonRequestToPerson(PersonRequest person);
+    public static partial void ApplyUpdate(PersonRequest updatedPerson, Person person);
 }

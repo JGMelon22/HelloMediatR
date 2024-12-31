@@ -2,4 +2,4 @@ using MediatR;
 
 namespace HelloMediatR.Application.Commands;
 
-public record UpdatePersonCommand(Guid Id, PersonInput UpdatedPerson) : IRequest<ServiceResponse<PersonResult>>;
+public record UpdatePersonCommand(Guid Id, PersonRequest UpdatedPerson) : IRequest<ServiceResponse<PersonResult>>;

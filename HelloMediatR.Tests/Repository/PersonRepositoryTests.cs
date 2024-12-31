@@ -47,7 +47,7 @@ public class PersonRepositoryTests
     {
         // Arrange
         var expectedId = Guid.NewGuid();
-        var newPerson = new PersonInput("Fulano de Tal", 22);
+        var newPerson = new PersonRequest("Fulano de Tal", 22);
         var personResult = new PersonResult
         {
             Id = expectedId,
@@ -104,7 +104,7 @@ public class PersonRepositoryTests
     {
         // Arrange
         var expectedId = _dbContext.People.LastOrDefault()!.Id;
-        var updatedPerson = new PersonInput("John Smith", 33);
+        var updatedPerson = new PersonRequest("John Smith", 33);
         var personResult = new PersonResult
         {
             Id = expectedId,

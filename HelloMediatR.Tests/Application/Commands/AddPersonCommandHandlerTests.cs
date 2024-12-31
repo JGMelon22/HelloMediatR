@@ -20,8 +20,8 @@ public class AddPersonCommandHandlerTests
     [Fact]
     public async Task AddPersonCommandHandler_Handle_ReturnsPersonResult()
     {
-        // Arrange 
-        var newPerson = new PersonInput("Fulano de Tal", 22);
+        // Arrange
+        var newPerson = new PersonRequest("Fulano de Tal", 22);
         var handler = new AddPersonCommandHandler(_personRepository);
         var personResult = new PersonResult
         {

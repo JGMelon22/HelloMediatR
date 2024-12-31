@@ -22,7 +22,7 @@ public class UpdatePersonCommandHandlerTests
     {
         // Arrange
         var id = Guid.NewGuid();
-        var updatedPerson = new PersonInput("Fulano de Tal", 22);
+        var updatedPerson = new PersonRequest("Fulano de Tal", 22);
         var handler = new UpdatePersonCommandHandler(_personRepository);
         var personResult = new PersonResult
         {

@@ -17,12 +17,12 @@ public class PeopleControllerTests
 {
     private readonly PeopleController _controller;
     private readonly IMediator _mediator;
-    private readonly IValidator<PersonInput> _validator;
+    private readonly IValidator<PersonRequest> _validator;
 
     public PeopleControllerTests()
     {
         _mediator = A.Fake<IMediator>();
-        _validator = A.Fake<IValidator<PersonInput>>();
+        _validator = A.Fake<IValidator<PersonRequest>>();
 
         // SUT
         _controller = new PeopleController(_mediator, _validator);
@@ -32,7 +32,7 @@ public class PeopleControllerTests
     public async Task PeopleController_AddPersonAsync_ReturnsPerson()
     {
         // Arrange
-        var newPerson = new PersonInput("Johnny Cage", 26);
+        var newPerson = new PersonRequest("Johnny Cage", 26);
         var validationResult = new ValidationResult();
         var personResult = new PersonResult
         {
@@ -111,7 +111,7 @@ public class PeopleControllerTests
         A.CallTo(() => _mediator.Send(A<GetPersonByIdQuery>.That.Matches(x => x.Id == id), default))
             .Returns(Task.FromResult(serviceResponse));
 
-        // Act 
+        // Act
         var result = await _controller.GetPersonByIdAsync(id);
 
         // Assert
@@ -126,7 +126,7 @@ public class PeopleControllerTests
     {
         // Arrange
         Guid id = Guid.NewGuid();
-        var updatedPerson = new PersonInput("Pedro Enrique", 14);
+        var updatedPerson = new PersonRequest("Pedro Enrique", 14);
         var validationResult = new ValidationResult();
         var personResult = new PersonResult
         {
