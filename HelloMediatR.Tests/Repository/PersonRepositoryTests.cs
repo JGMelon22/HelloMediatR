@@ -2,8 +2,10 @@ using ApiMediaRDemo.DTOs;
 using ApiMediaRDemo.Infrastructure.Data;
 using ApiMediaRDemo.Infrastructure.Repositories;
 using ApiMediaRDemo.Models;
+using FakeItEasy;
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace HelloMediatR.Tests.Repository;
 
@@ -11,6 +13,7 @@ public class PersonRepositoryTests
 {
     private readonly AppDbContext _dbContext;
     private readonly PersonRepository _repository;
+    private readonly ILogger<PersonRepository> _logger;
 
     public PersonRepositoryTests()
     {
@@ -20,8 +23,9 @@ public class PersonRepositoryTests
 
         _dbContext = new AppDbContext(options);
         _dbContext.Database.EnsureCreated();
+        _logger = A.Fake<ILogger<PersonRepository>>();
 
-        _repository = new PersonRepository(_dbContext);
+        _repository = new PersonRepository(_dbContext, _logger);
 
         if (_dbContext.People.Count() == 0)
         {
@@ -77,7 +81,7 @@ public class PersonRepositoryTests
     [Fact]
     public async Task PersonRepository_GetPersonByIdAsync_ReturnsPersonResult()
     {
-        // Arrange 
+        // Arrange
         var expectedId = _dbContext.People.FirstOrDefault()!.Id;
         var personResult = new PersonResult
         {
